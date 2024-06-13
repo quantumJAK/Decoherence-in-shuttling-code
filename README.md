@@ -1,1 +1,1 @@
-This repo represents the source code which can be used to reconstruct the results of the pre-print: 
+This repo represents the source code which can be used to reconstruct the results of the pre-print: https://arxiv.org/abs/2405.12185
