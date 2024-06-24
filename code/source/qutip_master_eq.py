@@ -6,8 +6,8 @@ from functions_utils import *
 
 sx = qt.sigmax(); sy=qt.sigmay(); sz = qt.sigmaz(); s0 = qt.qeye(2); sp = qt.sigmap();sm = qt.sigmam()
 
-hbar = 0.6582119514
-kb = 8.617333262145e-5
+hbar = 0.6582119514     # hbar in meV*ns
+kb = 8.617333262145e-2  # Boltzmann constant in meV/K
 ketupL = qt.tensor([qt.basis(2,0),qt.basis(2,0)])
 ketupR = qt.tensor([qt.basis(2,0),qt.basis(2,1)])
 ketdnL = qt.tensor([qt.basis(2,1),qt.basis(2,0)])
@@ -133,7 +133,7 @@ def run_master_qutip(mat, mn, data, trials, psi0 = (1,1), phase_correct = True):
     sign = mat[0]["sign"]
     Es = np.linspace(0.1,2*1e3,501) # energies to interpolate the spectrum on
     fx, fz = get_interpolated_spectrum(Es, mat, T)
-    
+
     # initialization
     res_master = np.zeros((6), dtype=complex)
     Qup = 0

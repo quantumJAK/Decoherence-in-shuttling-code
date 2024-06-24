@@ -68,11 +68,11 @@ GaAsN = {"rho": 5300*0.95*1e-2, "Xiu": 0, "Xid": 7 * 1e6,
         "c": {"L":5.3 * 1e3 , "T":2.5 *1e3}, "p":1.4 * 1e6, "name":"GaAs", "sign":np.sqrt(2)*hbar/2/1e3}
 
 # NOISE PARAMETERS
-R = 50
-alf = 0.01
-T = 100
-f = fgauss
-S1 = 1
+R = 50      #resistatnce of Jonhnson noise source
+alf = 0.01  #amplitude of tunnel coupling versus detuning noise
+T = 100     #temperature of the system in mK
+f = fgauss  #model of the wavefunction (gaussian)
+S1 = 1      #amplitude of overf noise mueV^2/Hz.
 
 
 # COMPUTE PHONON SPECTRA
