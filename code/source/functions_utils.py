@@ -67,6 +67,8 @@ GaAs = {"rho": 5300*0.95*1e-2, "Xiu": 0, "Xid": 7 * 1e6,
 GaAsN = {"rho": 5300*0.95*1e-2, "Xiu": 0, "Xid": 7 * 1e6, 
         "c": {"L":5.3 * 1e3 , "T":2.5 *1e3}, "p":1.4 * 1e6, "name":"GaAs", "sign":np.sqrt(2)*hbar/2/1e3}
 
+
+
 # NOISE PARAMETERS
 R = 50      #resistatnce of Jonhnson noise source
 alf = 0.01  #amplitude of tunnel coupling versus detuning noise
@@ -80,7 +82,7 @@ D = lambda dev: {"L":lambda th: dev["Xid"] + dev["Xiu"] * np.cos(th)**2,
                  "T":lambda th: -dev["Xiu"]*np.sin(th)*np.cos(th)}
 
     
-def PiezX(f,pol,Lam, dev, mat):
+def PiezX(f,pol, Lam, dev, mat):
     I = integrate.quad(lambda th: sin(th) *
                 np.exp(-(Lam*dev["lxy"]/mat["c"][pol]/hbar)**2*sin(th)**2/2)*
                 np.abs(f(Lam/mat["c"][pol]/hbar*cos(th),dev))**2*np.exp(-dev["dx"]**2/dev["lxy"]**2/2
@@ -154,6 +156,9 @@ def S_x(e0, mat, T):
 def S_z(e0, mat, T):
     f = fgauss
     return S_ph_z(f,e0,mat[1],mat[0])+S_overf(e0,S1,T)+ S_john1(e0,R,T)
+
+
+
 
 #Analytical expression for the mechanisms:
 def om(tun,eps):

@@ -24,8 +24,6 @@ szsx = qt.tensor(sz,sx);
 sxsz = qt.tensor(sx,sz);
 sxsy = qt.tensor(sx,sy);
 c_op = qt.tensor(sp,s0-sz)/2.;
-vp = np.array(qt.tensor(sp,sm),dtype=complex)
-vm = np.array(qt.tensor(sm,sp),dtype=complex)
 up = qt.basis(2,0)
 dn = qt.basis(2,1)
 s0sm = qt.tensor(s0,sm);
